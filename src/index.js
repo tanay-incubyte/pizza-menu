@@ -49,10 +49,9 @@ const pizzaData = [
 function App() {
   return (
     <div>
-      <h1>hello world 123</h1>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Header />
+      <Menu />
+      <Footer />
     </div>
   );
 }
@@ -64,6 +63,35 @@ function Pizza() {
       <h2>Pizza Spinaci</h2>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
+  );
+}
+
+function Header() {
+  return <header> Fast React Pizza Co.</header>;
+}
+
+function Menu() {
+  return (
+    <div>
+      <h2> Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 8;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+
+  // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
+  // else alert("Sorry we are closed");
+  return (
+    <footer>{new Date().toLocaleTimeString()} We're currently open!</footer>
   );
 }
 
