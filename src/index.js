@@ -67,7 +67,8 @@ function Pizza() {
 }
 
 function Header() {
-  return <header> Fast React Pizza Co.</header>;
+  const style = { color: "red", fontSize: "32px", textTransform: "uppercase" };
+  return <header style={style}> Fast React Pizza Co.</header>;
 }
 
 function Menu() {
