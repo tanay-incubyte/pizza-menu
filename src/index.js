@@ -57,16 +57,6 @@ function App() {
   );
 }
 
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
-  );
-}
-
 function Header() {
   // const style = { color: "red", fontSize: "32px", textTransform: "uppercase" };
   const style = {};
@@ -79,12 +69,25 @@ function Header() {
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2> Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="pizzas/spinaci.jpg"
+        price="10"
+      />
+    </main>
+  );
+}
+
+function Pizza(props) {
+  console.log("props", props);
+  return (
+    <div>
+      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
+      <h3>Pizza Spinaci</h3>
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
 }
@@ -99,7 +102,9 @@ function Footer() {
     console.log("We're currently open!");
   else console.log("Sorry we are closed");
   return (
-    <footer>{new Date().toLocaleTimeString()} We're currently open!</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} We're currently open!
+    </footer>
   );
 }
 
